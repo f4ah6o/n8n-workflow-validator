@@ -1,0 +1,50 @@
+{
+    "name": "n8n-workflow-validator",
+    "version": "0.1.0",
+    "description": "Standalone CLI tool to validate n8n workflow JSON files",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "n8n-validate": "./bin/n8n-validate.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest",
+        "test:watch": "vitest --watch",
+        "lint": "eslint src/",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "n8n",
+        "workflow",
+        "validator",
+        "json",
+        "cli",
+        "ci-cd"
+    ],
+    "author": "",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "commander": "^12.1.0",
+        "n8n-workflow": "^1.0.0",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0",
+        "vitest": "^2.0.0"
+    },
+    "files": [
+        "dist",
+        "bin"
+    ]
+}

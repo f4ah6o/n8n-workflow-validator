@@ -1,0 +1,28 @@
+{
+    "nodes": [
+        {
+            "id": "node1",
+            "name": "Start",
+            "type": "n8n-nodes-base.start",
+            "typeVersion": 1,
+            "position": [
+                0,
+                0
+            ],
+            "parameters": {}
+        }
+    ],
+    "connections": {
+        "Start": {
+            "main": [
+                [
+                    {
+                        "node": "NonExistentNode",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
