@@ -36,7 +36,7 @@ describe('validateWorkflow', () => {
 
         expect(result.valid).toBe(false);
         expect(result.errors.length).toBeGreaterThan(0);
-        expect(result.errors[0].message).toContain('Required');
+        expect(result.errors[0].message).toContain('array');
     });
 
     it('should fail on missing connections object', () => {
