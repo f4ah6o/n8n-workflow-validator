@@ -100,15 +100,20 @@ export function checkConnectionWarnings(
         }
     }
 
-    // Find unconnected nodes (except potential trigger nodes)
+    // Find unconnected nodes (except potential trigger nodes and sticky notes)
     const triggerPatterns = ['trigger', 'webhook', 'schedule', 'cron', 'start'];
+
+    // Sticky notes are meant to exist independently, not connected to other nodes
+    const standaloneNodeTypes = ['n8n-nodes-base.stickynote'];
 
     for (const node of nodes) {
         const isLikelyTrigger = triggerPatterns.some(
             (pattern) => node.type.toLowerCase().includes(pattern)
         );
 
-        if (!connectedNodes.has(node.name) && !isLikelyTrigger) {
+        const isStandaloneNode = standaloneNodeTypes.includes(node.type.toLowerCase());
+
+        if (!connectedNodes.has(node.name) && !isLikelyTrigger && !isStandaloneNode) {
             warnings.push({
                 path: `nodes.${node.name}`,
                 message: `Node "${node.name}" is not connected to any other node`,

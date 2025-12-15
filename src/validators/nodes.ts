@@ -81,8 +81,15 @@ export function checkNodeWarnings(nodes: Node[]): ValidationError[] {
             });
         }
 
-        // Warn about empty parameters
-        if (Object.keys(node.parameters).length === 0) {
+        // Warn about empty parameters (excluding nodes that don't require parameters)
+        const noParamRequiredTypes = [
+            'n8n-nodes-base.noOp',          // No Operation, do nothing
+            'n8n-nodes-base.stickyNote',    // Sticky Note
+            'n8n-nodes-base.start',         // Start node
+        ];
+        const requiresNoParams = noParamRequiredTypes.includes(node.type);
+
+        if (Object.keys(node.parameters).length === 0 && !requiresNoParams) {
             warnings.push({
                 path: `${nodePath}.parameters`,
                 message: `Node "${node.name}" has no parameters configured`,
