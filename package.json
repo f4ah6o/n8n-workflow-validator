@@ -33,9 +33,11 @@
     "engines": {
         "node": ">=18.0.0"
     },
+    "dependencies": {
+        "commander": "^14.0.2"
+    },
     "devDependencies": {
         "@types/node": "^20.0.0",
-        "commander": "^14.0.2",
         "n8n-workflow": "^1.120.0",
         "typescript": "^5.9.3",
         "vitest": "^4.0.15",

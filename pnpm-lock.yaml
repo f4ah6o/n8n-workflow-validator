@@ -7,13 +7,14 @@ settings:
 importers:
 
   .:
+    dependencies:
+      commander:
+        specifier: ^14.0.2
+        version: 14.0.2
     devDependencies:
       '@types/node':
         specifier: ^20.0.0
         version: 20.19.26
-      commander:
-        specifier: ^14.0.2
-        version: 14.0.2
       n8n-workflow:
         specifier: ^1.120.0
         version: 1.120.0
