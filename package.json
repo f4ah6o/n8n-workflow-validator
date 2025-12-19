@@ -6,7 +6,8 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "bin": {
-        "n8n-validate": "./bin/n8n-validate.js"
+        "n8n-validate": "./bin/n8n-validate.js",
+        "n8n-workflow-validator": "./bin/n8n-validate.js"
     },
     "scripts": {
         "build": "tsc",
