@@ -1,5 +1,9 @@
 name: Validate Workflows
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
 
 permissions:
   id-token: write  # Required for OIDC

@@ -1,6 +1,6 @@
 {
     "name": "n8n-workflow-validator",
-    "version": "0.1.0",
+    "version": "2025.12.0",
     "description": "Standalone CLI tool to validate n8n workflow JSON files",
     "type": "module",
     "main": "dist/index.js",
